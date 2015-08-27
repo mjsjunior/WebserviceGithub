@@ -7,10 +7,23 @@
 	width: 50px;
 }
 .seguidor {
-	font-size: 22px;
+	font-size: 14px;
+	margin-top: 15px;
 }
 
 .repositorio{
 	margin-left: 57px;
 	font-size: 18px;
+}
+
+.listRepo{
+	  background-color: rgba(204, 204, 204, 0.11);
+  margin: 29px 0;
+  border: 1px solid #ccc;
+}
+
+#pagination{
+	text-align: center;
+  margin-top: 20px;
+  display: none;
 }
