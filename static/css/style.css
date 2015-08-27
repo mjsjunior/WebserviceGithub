@@ -1,0 +1,16 @@
+.hidden{
+	display: none;
+}
+
+.seguidor img{
+	vertical-align: middle;
+	width: 50px;
+}
+.seguidor {
+	font-size: 22px;
+}
+
+.repositorio{
+	margin-left: 57px;
+	font-size: 18px;
+}

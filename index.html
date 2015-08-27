@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Atividade API GitHug</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="static/css/materialize.min.css">
+	<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row col 12">
+			<div class="white-text card-panel teal lighten-2">
+				<h5 class="center-align">Atividade WebService Github</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s6 offset-s3">
+			<form action="" id="buscar">
+		        <div class="input-field col s6">
+		          <input placeholder="Digite o usuário" name="user" id="user" type="text" class="validate">
+		          <label for="user">Usuário</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <button class="btn waves-effect waves-light" type="submit" name="action"> Buscar
+				    <i class="material-icons">send</i>
+				  </button>
+		        </div>
+		    </form>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col s6 offset-s3">
+				<div id="info" class="hidden center-align">
+					<h4><i class="fa fa-1x fa-github"></i><span class="name"> Maurício José da Silva</span></h4>
+					<h6><i class="fa fa-users"></i> Seguidores: <span class="followers">55</span></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s6 offset-s3">
+				<div id="followers" class="hidden">
+					<h3>Todos os seguidores</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/main.js"></script>
+	<script src="static/js/materialize.min.js"></script>
+</body>
+</html>
