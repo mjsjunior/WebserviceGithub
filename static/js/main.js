@@ -97,13 +97,14 @@ $( document ).ready(function() {
     			seguidor.success(function(user){
     				
     				var nome = ""
+    				var repos = user['public_repos'];
     				if(user['name'])
     					nome = user['name']
     				else
     					nome = data[i]['login']
 
 
-    			$('#followers').append("<div class='linha col s4'><div class='seguidor' id='"+data[i]['login']+"'><a class='clickSeguidor' href='#"+data[i]['login']+"'><input class='login' type='hidden' value='"+data[i]['login']+"'><img src='"+data[i]['avatar_url']+"'> "+nome+" </a></div></div>");
+    			$('#followers').append("<div class='linha col s6 m4'><div class='seguidor' id='"+data[i]['login']+"'><a class='clickSeguidor' href='#"+data[i]['login']+"'><input type='hidden' class='repos' value='"+repos+"'> <input class='login' type='hidden' value='"+data[i]['login']+"'><img src='"+data[i]['avatar_url']+"'> "+nome+" </a></div></div>");
     			
 
     			})
@@ -128,15 +129,16 @@ $( document ).ready(function() {
 
     $("#followers").on("click",".seguidor", function(){
     	var user = $(this).find('.login').val();
+    	var repos = $(this).find('.repos').val();
     	$('.repositorio').remove();
-    	$('.linha').removeClass('s12 listRepo');
-    	$('.linha').addClass('s4');
-    	    	$(this).parent().removeClass('s4');
+    	$('.linha').removeClass('s12 listRepo center-align');
+    	$('.linha').addClass('s6 m4');
+    	$(this).parent().removeClass('s6 m4');
     	$(this).parent().addClass('s12 center-align listRepo');
 
 
 	    $.ajax({
-         url: api+"/users/"+user+"/repos?"+endPoint,
+         url: api+"/users/"+user+"/repos?per_page="+repos+'&'+endPoint,
          type: "GET",
          data: $(this).serialize(),
          success: function(d) {
@@ -146,10 +148,12 @@ $( document ).ready(function() {
 	});
 
 	function adicionarRepositorios(d,id){
-		$('#'+id+' p').empty();
+		$('#'+id+' p').remove();
+		$('#'+id+' h5').remove();
 		$.each(d,function(i){
-			$('#'+id).append('<p class="repositorio"> <a target="_blank" href="'+d[i]['html_url']+'"><i class="fa fa-link"></i> '+d[i]['name']+'</a></p>');
+			$('#'+id).append('<div class="col s6 m4 repositorio"><p> <a target="_blank" href="'+d[i]['html_url']+'"><i class="fa fa-link"></i> '+d[i]['name']+'</a></p></div>');
 		})
+
 		return false;
 	}
 

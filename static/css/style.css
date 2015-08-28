@@ -7,13 +7,19 @@
 	width: 50px;
 }
 .seguidor {
+	width: 100%;
 	font-size: 14px;
 	margin-top: 15px;
 }
 
+.clickSeguidor{
+	display: inline-block;
+	width: 100%;
+	
+}
+
 .repositorio{
-	margin-left: 57px;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .listRepo{
